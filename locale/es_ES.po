@@ -1,0 +1,13 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:sale.sale,invoice_complete:"
+msgid "Invoice complete"
+msgstr "Facturación completa"
+
+msgctxt "help:sale.sale,invoice_complete:"
+msgid "If marked invoices will be created only if the sale is complete"
+msgstr ""
+"Si se marca sólo se crearan facturas si la venda se ha servido "
+"completamente."
