@@ -5,10 +5,10 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
 __all__ = ['Sale']
-__metaclass__ = PoolMeta
 
 
 class Sale:
+    __metaclass__ = PoolMeta
     __name__ = 'sale.sale'
 
     invoice_complete = fields.Boolean('Invoice complete', help='If marked '
@@ -17,10 +17,10 @@ class Sale:
             'invisible': (Eval('invoice_method') != 'shipment'),
             }, depends=['state'])
 
-    def create_invoice(self, invoice_type):
+    def create_invoice(self):
         if self.invoice_complete and not self.is_sale_complete():
             return
-        return super(Sale, self).create_invoice(invoice_type)
+        return super(Sale, self).create_invoice()
 
     def is_sale_complete(self):
         ' Returns true if the sale is considered complete, false otherwise '
