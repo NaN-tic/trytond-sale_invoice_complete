@@ -150,7 +150,7 @@ Create an Inventory::
     >>> inventory_line.save()
     >>> Inventory.confirm([inventory.id], config.context)
     >>> inventory.state
-    u'done'
+    'done'
 
 Sale 5 products with an invoice method 'on shipment'::
 
@@ -179,7 +179,7 @@ Sale 5 products with an invoice method 'on shipment'::
     >>> sale.click('confirm')
     >>> sale.click('process')
     >>> sale.state
-    u'processing'
+    'processing'
     >>> sale.reload()
     >>> len(sale.shipments), len(sale.shipment_returns), len(sale.invoices)
     (1, 0, 0)

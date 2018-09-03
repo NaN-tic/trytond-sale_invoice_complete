@@ -7,8 +7,7 @@ from trytond.pyson import Eval
 __all__ = ['Sale']
 
 
-class Sale:
-    __metaclass__ = PoolMeta
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
 
     invoice_complete = fields.Boolean('Invoice complete', help='If marked '
