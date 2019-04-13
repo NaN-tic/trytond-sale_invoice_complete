@@ -177,7 +177,6 @@ Sale 5 products with an invoice method 'on shipment'::
     >>> sale_line.quantity = 3.0
     >>> sale.click('quote')
     >>> sale.click('confirm')
-    >>> sale.click('process')
     >>> sale.state
     'processing'
     >>> sale.reload()
