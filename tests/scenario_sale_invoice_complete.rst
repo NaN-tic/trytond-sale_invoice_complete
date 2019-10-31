@@ -116,7 +116,6 @@ Create product::
     >>> template.name = 'product'
     >>> template.default_uom = unit
     >>> template.type = 'goods'
-    >>> template.purchasable = True
     >>> template.salable = True
     >>> template.list_price = Decimal('10')
     >>> template.cost_price_method = 'fixed'
@@ -160,7 +159,6 @@ Sale 5 products with an invoice method 'on shipment'::
     >>> sale = Sale()
     >>> sale.party = customer
     >>> sale.invoice_complete = True
-    >>> sale.delivery_address = address1
     >>> sale.payment_term = payment_term
     >>> sale.invoice_method = 'shipment'
     >>> sale_line = SaleLine()
