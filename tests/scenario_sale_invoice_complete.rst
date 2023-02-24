@@ -187,7 +187,6 @@ Validate Shipments::
     ...     move.quantity = 1
     ...     move.save()
     >>> ShipmentOut.assign_try([shipment.id], config.context)
-    True
     >>> ShipmentOut.pick([shipment.id], config.context)
     >>> ShipmentOut.pack([shipment.id], config.context)
     >>> ShipmentOut.done([shipment.id], config.context)
@@ -198,7 +197,6 @@ Validate Shipments::
     >>> shipment2, = sale.shipments.find([('state', '=', 'waiting')])
     >>> config.user = stock_user.id
     >>> ShipmentOut.assign_try([shipment2.id], config.context)
-    True
     >>> ShipmentOut.pick([shipment2.id], config.context)
     >>> ShipmentOut.pack([shipment2.id], config.context)
     >>> ShipmentOut.done([shipment2.id], config.context)
