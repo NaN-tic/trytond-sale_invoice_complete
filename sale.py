@@ -24,5 +24,6 @@ class Sale(metaclass=PoolMeta):
     def is_sale_complete(self):
         ' Returns true if the sale is considered complete, false otherwise '
         if self.invoice_method == 'shipment':
-            return all(l.move_done for l in self.lines)
+            return all((l.moves_progress or 0) >= 1.0 for l in self.lines
+                if l.moves_progress is not None)
         return True
