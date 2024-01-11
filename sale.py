@@ -14,7 +14,7 @@ class Sale(metaclass=PoolMeta):
         'invoices will be created only if the sale is complete', states={
             'readonly': (Eval('state') != 'draft'),
             'invisible': (Eval('invoice_method') != 'shipment'),
-            }, depends=['state'])
+            })
 
     def create_invoice(self):
         if self.invoice_complete and not self.is_sale_complete():
