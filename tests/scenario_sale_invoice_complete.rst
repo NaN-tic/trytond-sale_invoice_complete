@@ -189,7 +189,7 @@ Validate Shipments::
     >>> ShipmentOut.assign_try([shipment.id], config.context)
     >>> ShipmentOut.pick([shipment.id], config.context)
     >>> ShipmentOut.pack([shipment.id], config.context)
-    >>> ShipmentOut.done([shipment.id], config.context)
+    >>> ShipmentOut.do([shipment.id], config.context)
     >>> config.user = sale_user.id
     >>> sale.reload()
     >>> len(sale.shipments), len(sale.shipment_returns), len(sale.invoices)
@@ -199,7 +199,7 @@ Validate Shipments::
     >>> ShipmentOut.assign_try([shipment2.id], config.context)
     >>> ShipmentOut.pick([shipment2.id], config.context)
     >>> ShipmentOut.pack([shipment2.id], config.context)
-    >>> ShipmentOut.done([shipment2.id], config.context)
+    >>> ShipmentOut.do([shipment2.id], config.context)
     >>> config.user = sale_user.id
     >>> sale.reload()
     >>> len(sale.shipments), len(sale.shipment_returns), len(sale.invoices)
