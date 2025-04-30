@@ -78,9 +78,9 @@ class Test(unittest.TestCase):
         supplier.save()
         customer = Party(name='Customer')
         customer.save()
-        address1 = PartyAddress(name='a1', party=customer, delivery=True)
+        address1 = PartyAddress(building_name='a1', party=customer, delivery=True)
         address1.save()
-        address2 = PartyAddress(name='a2', party=customer, delivery=True)
+        address2 = PartyAddress(building_name='a2', party=customer, delivery=True)
         address2.save()
         self.assertEqual(len(customer.addresses), 3)
 
