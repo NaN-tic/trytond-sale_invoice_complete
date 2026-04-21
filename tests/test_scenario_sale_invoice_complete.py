@@ -134,7 +134,7 @@ class Test(unittest.TestCase):
         Inventory.confirm([inventory.id], config.context)
         self.assertEqual(inventory.state, 'done')
 
-        # Sale 5 products with an invoice method 'on shipment'
+        # Sale 5 products with an invoice method 'on fulfillment'
         config.user = sale_user.id
         Sale = Model.get('sale.sale')
         SaleLine = Model.get('sale.line')
@@ -142,7 +142,7 @@ class Test(unittest.TestCase):
         sale.party = customer
         sale.invoice_complete = True
         sale.payment_term = payment_term
-        sale.invoice_method = 'shipment'
+        sale.invoice_method = 'fulfillment'
         sale_line = SaleLine()
         sale.lines.append(sale_line)
         sale_line.product = product

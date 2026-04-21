@@ -13,7 +13,7 @@ class Sale(metaclass=PoolMeta):
     invoice_complete = fields.Boolean('Invoice complete', help='If marked '
         'invoices will be created only if the sale is complete', states={
             'readonly': (Eval('state') != 'draft'),
-            'invisible': (Eval('invoice_method') != 'shipment'),
+            'invisible': (Eval('invoice_method') != 'fulfillment'),
             })
 
     def create_invoice(self):
@@ -23,7 +23,7 @@ class Sale(metaclass=PoolMeta):
 
     def is_sale_complete(self):
         ' Returns true if the sale is considered complete, false otherwise '
-        if self.invoice_method == 'shipment':
+        if self.invoice_method == 'fulfillment':
             return all((l.moves_progress or 0) >= 1.0 for l in self.lines
                 if l.moves_progress is not None)
         return True
